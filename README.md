@@ -7,8 +7,8 @@ A **Full-Stack Resource Management Application** built using:
 
 ## 🌐 Live Demo
 
-🔗 **Frontend (Vercel):** [https://your-frontend.vercel.app](https://resource-manager-frontend-three.vercel.app/)  
-🔗 **Backend (Render):** [https://your-backend.onrender.com](https://resouce-manager-backend.onrender.com/resources/)  
+🔗 **Frontend (Vercel):** [Resource-Manger-Frontend](https://resource-manager-frontend-three.vercel.app/)  
+🔗 **Backend (Render):** [Resource-Manager-Backend](https://resouce-manager-backend.onrender.com/resources/)  
 
 ---
 
