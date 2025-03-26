@@ -1,5 +1,14 @@
-import "@/styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+const queryClient = new QueryClient();
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+    </QueryClientProvider>
+  );
 }
+
+export default MyApp;
