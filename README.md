@@ -40,3 +40,30 @@ A **Full-Stack Resource Management Application** built using:
 
 ---
 
+```mermaid
+graph TD;
+  A[User] -->|Interacts with| B[Frontend (Next.js)]
+  B --> |Sends API Request| C[Backend (Express.js)]
+  C --> |Queries| D[PostgreSQL Database]
+  D --> |Returns Data| C
+  C --> |Sends Response| B
+  B --> |Displays Data| A
+
+  subgraph Frontend (Vercel)
+    B1[UI Components] --> B2[React Query]
+    B2 --> |API Calls| B3[Axios]
+    B3 --> |Communicates with API| C
+  end
+
+  subgraph Backend (Render)
+    C1[Express Routes] --> C2[Controllers]
+    C2 --> C3[Sequelize ORM]
+    C3 --> |Executes Queries| D
+  end
+
+  subgraph Database (PostgreSQL)
+    D1[Resources Table] 
+    D2[Users Table] 
+    D3[Logs Table]
+  end
+
