@@ -74,8 +74,8 @@ The system follows a **modular structure** with clear separation of concerns bet
 ## **📦 Installation & Setup**
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   git clone https://github.com/harshita795/resource-manager-frontend.git
+   cd resource-manager-frontend
 2. Install dependencies:
    ```bash
    npm install
