@@ -1,9 +1,6 @@
 # Resource Manager
 
-A **Full-Stack Resource Management Application** built using:  
-- **Backend:** Node.js, Express.js, PostgreSQL (via Sequelize ORM)  
-- **Frontend:** Next.js, React Query, Axios, Bootstrap  
-- **Deployment:** **Backend on Render, Frontend on Vercel**  
+A **full-stack resource management system** that allows users to **add, edit, delete, and view resources**. The project follows a **RESTful API architecture**, with a **Next.js frontend** and a **Node.js backend** using **Express.js** and **PostgreSQL**.
 
 ## 🌐 Live Demo
 
@@ -40,30 +37,86 @@ A **Full-Stack Resource Management Application** built using:
 
 ---
 
-```mermaid
-graph TD;
-  A[User] -->|Interacts with| B[Frontend (Next.js)]
-  B --> |Sends API Request| C[Backend (Express.js)]
-  C --> |Queries| D[PostgreSQL Database]
-  D --> |Returns Data| C
-  C --> |Sends Response| B
-  B --> |Displays Data| A
+## **🖼 Architecture Diagram**
+![Untitled diagram-2025-03-27-033607](https://github.com/user-attachments/assets/242b677f-ecd6-4da8-998b-552a61c7443d)
 
-  subgraph Frontend (Vercel)
-    B1[UI Components] --> B2[React Query]
-    B2 --> |API Calls| B3[Axios]
-    B3 --> |Communicates with API| C
-  end
+---
 
-  subgraph Backend (Render)
-    C1[Express Routes] --> C2[Controllers]
-    C2 --> C3[Sequelize ORM]
-    C3 --> |Executes Queries| D
-  end
+## **📖 System Architecture**
 
-  subgraph Database (PostgreSQL)
-    D1[Resources Table] 
-    D2[Users Table] 
-    D3[Logs Table]
-  end
+The system follows a **modular structure** with clear separation of concerns between **frontend, backend, and database**.
+
+### **1️⃣ Database - PostgreSQL**
+- Stores **resources** in a table.  
+- Executes queries via **Sequelize ORM**.  
+
+### **2️⃣ Backend - Express.js (Hosted on Render)**
+- **Routes (Express.js)** handle API requests.  
+- **Controllers** process the requests and call database queries.  
+- **Sequelize ORM** interacts with the PostgreSQL database.  
+- Sends responses to the frontend.  
+
+### **3️⃣ Frontend - Next.js (Hosted on Vercel)**
+- **UI Components** display resource data.  
+- Uses **React Query** for efficient data fetching.  
+- **Axios** handles API calls to the backend.  
+
+### **📌 Data Flow**
+1. The frontend (Next.js) makes API requests via **Axios**.  
+2. The backend (Express.js) receives the request and processes it using **controllers**.  
+3. The backend interacts with the **PostgreSQL database** via **Sequelize ORM**.  
+4. The database executes the queries and returns the result.  
+5. The backend sends the response back to the frontend.  
+6. The frontend updates the UI using **React Query**.  
+
+---
+
+## **📦 Installation & Setup**
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+2. Install dependencies:
+   ```bash
+   npm install
+3. Set up environment variables (.env file):
+   ```bash
+   DATABASE_URL=your_database_url
+4. Run the backend:
+   ```bash
+   npm start
+6. Run the frontend:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## **📡 API Endpoints**
+
+| Method | Endpoint              | Description          |
+|--------|-----------------------|----------------------|
+| GET    | `/api/resources`      | Fetch all resources |
+| GET    | `/api/resources/:id`  | Fetch resource by ID |
+| POST   | `/api/resources`      | Add a new resource  |
+| PUT    | `/api/resources/:id`  | Update a resource   |
+| DELETE | `/api/resources/:id`  | Delete a resource   |
+
+---
+
+##🛠️ **Deployment**
+
+- **Frontend** → Hosted on Vercel
+- **Backend** → Hosted on Render
+- **Database** → PostgreSQL on Render
+
+---
+
+
+
+
+
+
+
+
 
